@@ -63,7 +63,7 @@
                 </div>
             </div>
 
-            <div class="project-card">
+           <div class="project-card">
                 <div class="project-header">
                     <h2>Web Production & Optimization</h2>
                     <span class="project-number">03 / PROJECT</span>
@@ -81,35 +81,39 @@
                 </ul>
                 <div class="preview-box">
                     <pre><code>
-// Extrait de code de votre projet Web (app.js / scripts)
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Portfolio et composants initialisés.");
-
-    // Interaction au survol des cartes
-    const projectCards = document.querySelectorAll(".project-card");
-    projectCards.forEach(card => {
-        card.addEventListener("mousemove", (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left - (rect.width / 2);
-            const y = e.clientY - rect.top - (rect.height / 2);
-            card.style.transform = `translate(${x * 0.002}px, ${y * 0.002}px)`;
-        });
-
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = "none";
-            card.style.transition = "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)";
-        });
-    });
-});
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;COMMUNIQUER LA SCIENCE | Accueil&lt;/title&gt;
+    &lt;style&gt;
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap');
+        :root { --bg: #fafafa; --yellow: #FFD600; --blue: #3b82f6; --pink: #FF6BB3; --dark: #121212; }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; color: var(--dark); line-height: 1.4; }
+        
+        nav { background: white; border-bottom: 4px solid var(--dark); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; font-size: 0.9rem; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav&gt;
+        &lt;span class="nav-brand"&gt;Communiquer la science&lt;/span&gt;
+        &lt;div class="nav-menu"&gt;
+            &lt;a href="index.html" class="active"&gt;ACCUEIL&lt;/a&gt;
+            &lt;a href="anatomie.html"&gt;01. LE CIRCUIT&lt;/a&gt;
+            &lt;a href="chimie.html"&gt;02. LE MESSAGER&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;/body&gt;
+&lt;/html&gt;
                     </code></pre>
                 </div>
             </div>
-
         </div>
 
-        <footer>
-            Prepared for Connect 4 Marketing <span id="year"></span>
-        </footer>
+        <footer class="site-footer">
+        <p>&copy; Portfolio 2026 – Krystel Bacha</p>
+    </footer>
     </div>
 
     <script src="app.js"></script>
