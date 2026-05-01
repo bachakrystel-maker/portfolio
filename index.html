@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krystel Bacha | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-info">
+                <h1>KRYSTEL BACHA</h1>
+                <p>Selected Projects & Interface Development</p>
+            </div>
+            <div class="contact-info">
+                Côte-des-Neiges, Montréal, QC<br>
+                <a href="tel:+14385258188">(438) 525-8188</a><br>
+                <a href="mailto:bachakrystel@gmail.com">bachakrystel@gmail.com</a>
+            </div>
+        </header>
+
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>Editorial Design & Layout</h2>
+                    <span class="project-number">01 / PROJECT</span>
+                </div>
+                <p class="project-desc">
+                    Conception et mise en page d'un magazine de 28 pages sur l'art de vivre et le vin, avec gestion de la grille, de la typographie et des éléments graphiques.
+                </p>
+                <ul class="tech-list">
+                    <li>Adobe InDesign</li>
+                    <li>Adobe Photoshop</li>
+                    <li>Adobe Illustrator</li>
+                </ul>
+                <div class="media-container">
+                    <iframe src="KrystelBacha_TP3_WEB.pdf#view=FitV" class="media-frame" title="Magazine 28 pages"></iframe>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>Interactive Prototyping</h2>
+                    <span class="project-number">02 / PROJECT</span>
+                </div>
+                <p class="project-desc">
+                    Maquettes d'interface et parcours utilisateur interactifs réalisés sur Figma.
+                </p>
+                <ul class="tech-list">
+                    <li>Figma</li>
+                    <li>Wireframing</li>
+                    <li>UI/UX</li>
+                </ul>
+                <div class="media-container">
+                    <iframe class="media-frame" src="https://www.figma.com/embed?embed_host=share&url=VOTRE_LIEN_FIGMA" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>
+                        Web Production & Optimization 
+                        <a href="https://bachakrystel-maker.github.io/projetfinal-com3320/" target="_blank" class="live-link">Voir le site ↗</a>
+                    </h2>
+                    <span class="project-number">03 / PROJECT</span>
+                </div>
+                <p class="project-desc">
+                    Développement web structuré et optimisé. La logique et l'implémentation du code utilisent les fonctionnalités de Phoenix Code.
+                </p>
+                <ul class="tech-list">
+                    <li>Phoenix Code</li>
+                    <li>GitHub</li>
+                    <li>HTML / CSS / JS</li>
+                </ul>
+                <div class="preview-box">
+                    <pre><code>
+// Extrait de code de votre projet Web (app.js / scripts)
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Portfolio et composants initialisés.");
+
+    // Interaction au survol des cartes
+    const projectCards = document.querySelectorAll(".project-card");
+    projectCards.forEach(card => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - (rect.width / 2);
+            const y = e.clientY - rect.top - (rect.height / 2);
+            card.style.transform = `translate(${x * 0.002}px, ${y * 0.002}px)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "none";
+            card.style.transition = "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)";
+        });
+    });
+});
+                    </code></pre>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            Prepared for Connect 4 Marketing <span id="year"></span>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
