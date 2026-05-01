@@ -79,6 +79,7 @@
                     <li>GitHub</li>
                     <li>HTML / CSS / JS</li>
                 </ul>
+                
                 <div class="preview-box">
                     <pre><code>
 &lt;!DOCTYPE html&gt;
@@ -90,9 +91,18 @@
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap');
         :root { --bg: #fafafa; --yellow: #FFD600; --blue: #3b82f6; --pink: #FF6BB3; --dark: #121212; }
         body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; color: var(--dark); line-height: 1.4; }
-        
         nav { background: white; border-bottom: 4px solid var(--dark); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
         .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; font-size: 0.9rem; }
+        .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 10px; padding: 8px 12px; border: 2px solid transparent; }
+        .nav-menu a.active { background: var(--yellow); border: 2px solid var(--dark); box-shadow: 4px 4px 0 var(--dark); }
+        .hero { padding: 120px 20px; text-align: center; background: var(--blue); color: white; border-bottom: 5px solid var(--dark); }
+        .hero h1 { font-size: 4.5rem; margin: 0; line-height: 0.85; text-transform: uppercase; -webkit-text-stroke: 1.5px var(--dark); }
+        .container { max-width: 1000px; margin: -60px auto 100px auto; padding: 0 20px; }
+        .main-card { background: white; border: 4px solid var(--dark); padding: 60px; box-shadow: 15px 15px 0 var(--dark); }
+        .tag { display: inline-block; background: var(--pink); color: white; padding: 8px 20px; font-weight: 800; border: 3px solid var(--dark); margin-bottom: 25px; box-shadow: 4px 4px 0 var(--dark); text-transform: uppercase; }
+        h2 { font-size: 2.8rem; line-height: 1; margin-bottom: 40px; text-transform: uppercase; }
+        .btn { display: inline-block; background: var(--yellow); color: var(--dark); padding: 25px 60px; font-weight: 900; text-decoration: none; border: 4px solid var(--dark); box-shadow: 8px 8px 0 var(--dark); text-transform: uppercase; margin-top: 40px; transition: 0.2s; }
+        footer { background: var(--dark); color: white; padding: 60px 20px; border-top: 5px solid var(--yellow); margin-top: 80px; }
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -102,8 +112,50 @@
             &lt;a href="index.html" class="active"&gt;ACCUEIL&lt;/a&gt;
             &lt;a href="anatomie.html"&gt;01. LE CIRCUIT&lt;/a&gt;
             &lt;a href="chimie.html"&gt;02. LE MESSAGER&lt;/a&gt;
+            &lt;a href="mecanisme.html"&gt;03. LA MOTIVATION&lt;/a&gt;
+            &lt;a href="addiction.html"&gt;04. LES USAGES&lt;/a&gt;
+            &lt;a href="solutions.html"&gt;05. SOLUTIONS&lt;/a&gt;
         &lt;/div&gt;
     &lt;/nav&gt;
+    
+    &lt;header class="hero"&gt;
+        &lt;h1&gt;POURQUOI ON CONTINUE DE SCROLLER ALORS QU’ON NE S’AMUSE MÊME PLUS ?&lt;/h1&gt;
+    &lt;/header&gt;
+    
+    &lt;main class="container"&gt;
+        &lt;div class="main-card"&gt;
+            &lt;span class="tag"&gt;Dossier : Neuro-comportemental&lt;/span&gt;
+            &lt;h2&gt;Ton cerveau est-il coincé dans une boucle infinie ?&lt;/h2&gt;
+            &lt;p&gt;La dopamine n'est pas la molécule du bonheur. C'est le moteur qui te pousse à chercher, à cliquer et à attendre la prochaine surprise. C'est l'essence même de ton envie.&lt;/p&gt;
+            &lt;p&gt;On t'explique comment ton circuit de la récompense se fait hacker par ton téléphone et comment reprendre le contrôle sur ton propre réseau interne.&lt;/p&gt;
+            &lt;a href="anatomie.html" class="btn"&gt;Ouvrir le dossier →&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+    
+    &lt;footer style="background: var(--dark); color: white; padding: 80px 20px; border-top: 8px solid var(--yellow); margin-top: 100px;"&gt;
+        &lt;div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1.2fr; gap: 60px;"&gt;
+            &lt;div&gt;
+                &lt;h3 style="text-transform: uppercase; color: var(--yellow); font-size: 1.6rem; margin-top: 0; letter-spacing: 1px; line-height: 1;"&gt;Communiquer la science&lt;/h3&gt;
+                &lt;p style="color: #94a3b8; font-size: 1.1rem; line-height: 1.6; max-width: 450px; margin-top: 20px;"&gt;
+                    On décode ton cerveau pour que tu comprennes enfin pourquoi ton téléphone te rend fou. Un projet de vulgarisation basé sur des sources scientifiques réelles, mais expliqué avec tes mots.
+                &lt;/p&gt;
+                &lt;div style="margin-top: 40px; font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid #334155; padding-top: 20px;"&gt;
+                    © 2026 — Dossier Interactif Dopamine — Montréal, QC
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h4 style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; color: white; margin-bottom: 30px; border-left: 4px solid var(--blue); padding-left: 15px;"&gt;Plan du dossier&lt;/h4&gt;
+                &lt;div style="display: grid; grid-template-columns: 1fr; gap: 15px;"&gt;
+                    &lt;a href="index.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--yellow)'" onmouseout="this.style.color='white'"&gt;→ ACCUEIL&lt;/a&gt;
+                    &lt;a href="anatomie.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='white'"&gt;→ 01. LE CIRCUIT (ANATOMIE)&lt;/a&gt;
+                    &lt;a href="chimie.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--purple)'" onmouseout="this.style.color='white'"&gt;→ 02. LE MESSAGER (CHIMIE)&lt;/a&gt;
+                    &lt;a href="mecanisme.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='white'"&gt;→ 03. LA MOTIVATION (MÉCANISME)&lt;/a&gt;
+                    &lt;a href="addiction.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='white'"&gt;→ 04. LES USAGES (NUMÉRIQUE)&lt;/a&gt;
+                    &lt;a href="solutions.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--yellow)'" onmouseout="this.style.color='white'"&gt;→ 05. REPRENDRE LE CONTRÔLE (SOLUTIONS)&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
 &lt;/body&gt;
 &lt;/html&gt;
                     </code></pre>
