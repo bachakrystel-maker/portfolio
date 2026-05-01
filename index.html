@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krystel Bacha | Projects</title>
+    <title>Krystel Bacha | Portfolio</title>
     <style>
         :root {
             --bg-color: #ffffff;
             --text-color: #111111;
             --secondary-color: #666666;
             --border-color: #e5e5e5;
-            --card-bg: #fafafa;
+            --card-bg: #f9f9f9;
             --accent-color: #000000;
         }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.5;
-            margin: 0;
             padding: 60px 0;
         }
 
@@ -31,17 +36,17 @@
 
         header {
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 30px;
-            margin-bottom: 40px;
+            padding-bottom: 35px;
+            margin-bottom: 45px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
         }
 
         .header-info h1 {
-            margin: 0 0 6px 0;
-            font-size: 32px;
-            font-weight: 700;
+            margin: 0 0 8px 0;
+            font-size: 34px;
+            font-weight: 800;
             letter-spacing: -0.5px;
         }
 
@@ -49,6 +54,7 @@
             margin: 0;
             color: var(--secondary-color);
             font-size: 15px;
+            font-weight: 400;
         }
 
         .contact-info {
@@ -60,113 +66,154 @@
         .contact-info a {
             color: var(--text-color);
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
         .contact-info a:hover {
             text-decoration: underline;
-        }
-
-        h2 {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 20px;
-            color: var(--text-color);
-        }
-
-        .nav-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
-            margin-bottom: 40px;
-        }
-
-        .btn-project {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            padding: 16px 12px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-color);
-            text-align: left;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .btn-project:hover, .btn-project.active {
-            border-color: var(--accent-color);
-            background: #ffffff;
-        }
-
-        .btn-project span {
-            font-size: 11px;
-            font-weight: 400;
             color: var(--secondary-color);
         }
 
-        .content-card {
-            background: var(--card-bg);
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .project-card {
+            background: #ffffff;
             border: 1px solid var(--border-color);
             border-radius: 6px;
-            padding: 30px;
-            margin-bottom: 40px;
+            padding: 35px;
+            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
         }
 
-        .project-content {
-            display: none;
+        .project-card:hover {
+            border-color: var(--text-color);
+            transform: translateY(-2px);
         }
 
-        .project-content.active {
-            display: block;
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
         }
 
-        .project-content h3 {
-            margin: 0 0 15px 0;
+        .project-card h2 {
             font-size: 20px;
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: -0.2px;
         }
 
-        .project-content p {
+        .project-number {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--secondary-color);
+            font-family: monospace;
+        }
+
+        .project-desc {
             font-size: 14px;
-            color: #333333;
-            margin-bottom: 20px;
+            color: var(--secondary-color);
+            margin-bottom: 22px;
+            max-width: 90%;
         }
 
-        .tech-stack {
+        .tech-list {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             list-style: none;
             padding: 0;
-            margin: 0 0 20px 0;
+            margin-bottom: 25px;
         }
 
-        .tech-stack li {
-            background: #ffffff;
+        .tech-list li {
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
             padding: 4px 10px;
             border-radius: 4px;
             font-size: 11px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             color: #333333;
         }
 
-        .project-details {
-            font-size: 13px;
-            padding-left: 20px;
-            color: #333333;
-        }
-
-        .project-details li {
-            margin-bottom: 8px;
-        }
-
-        .footer-note {
-            text-align: center;
+        /* Responsive Frame / Embed Box */
+        .preview-box {
+            background: #000000;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            color: #ffffff;
+            font-family: Menlo, Monaco, 'Courier New', monospace;
+            height: 280px;
+            overflow-y: scroll; /* Scrollable within fixed container */
+            -webkit-overflow-scrolling: touch;
             font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .preview-box::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .preview-box::-webkit-scrollbar-thumb {
+            background-color: #333333;
+            border-radius: 4px;
+        }
+
+        .preview-box pre {
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        /* Figma Frame Container */
+        .figma-frame {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            background: #fafafa;
+        }
+
+        .figma-embed {
+            width: 100%;
+            height: 320px;
+            border: none;
+        }
+
+        /* Magazine Layout Placeholder */
+        .magazine-preview {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 40px 20px;
+            text-align: center;
+            background: #fafafa;
+            font-size: 13px;
+        }
+
+        .magazine-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #ffffff;
+            background: #000000;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            transition: background 0.2s ease;
+        }
+
+        .magazine-link:hover {
+            background: #333333;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 11px;
             color: var(--secondary-color);
             border-top: 1px solid var(--border-color);
             padding-top: 20px;
@@ -179,7 +226,7 @@
         <header>
             <div class="header-info">
                 <h1>KRYSTEL BACHA</h1>
-                <p>Projects & Work Portfolio</p>
+                <p>Selected Projects & Interface Development</p>
             </div>
             <div class="contact-info">
                 Côte-des-Neiges, Montréal, QC<br>
@@ -188,107 +235,119 @@
             </div>
         </header>
 
-        <h2>Select a category to view work</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>Editorial Design & Layout</h2>
+                    <span class="project-number">01 / PROJECT</span>
+                </div>
+                <p class="project-desc">
+                    Concept-to-print execution of a 28-page editorial magazine, managing type hierarchies, grid structures, and visual tone.
+                </p>
+                <ul class="tech-list">
+                    <li>Adobe InDesign</li>
+                    <li>Adobe Photoshop</li>
+                    <li>Adobe Illustrator</li>
+                </ul>
+                <div class="magazine-preview">
+                    <strong>28-Page Magazine Layout Excerpt</strong><br>
+                    <span style="color: var(--secondary-color);">Showcasing spread compositions and custom typography.</span><br>
+                    <a href="#" class="magazine-link">VIEW PROJECT SPREAD</a>
+                </div>
+            </div>
 
-        <div class="nav-buttons">
-            <button class="btn-project active" onclick="showProject('web')">
-                Web & UI/UX <span>Code & Interfaces</span>
-            </button>
-            <button class="btn-project" onclick="showProject('editorial')">
-                Editorial Design <span>28-Page Layout</span>
-            </button>
-            <button class="btn-project" onclick="showProject('ai')">
-                AI Workflows <span>Tools & Optimization</span>
-            </button>
-            <button class="btn-project" onclick="showProject('multimedia')">
-                Multimedia <span>Video & Motion</span>
-            </button>
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>Interactive Prototyping</h2>
+                    <span class="project-number">02 / PROJECT</span>
+                </div>
+                <p class="project-desc">
+                    User interface wireframes and interactive application flows mapped directly in Figma for modern, simple, conversion-oriented workflows.
+                </p>
+                <ul class="tech-list">
+                    <li>Figma</li>
+                    <li>Wireframing</li>
+                    <li>User Interface Flow</li>
+                </ul>
+                <div class="figma-frame">
+                    <iframe class="figma-embed" src="https://www.figma.com/embed?embed_host=share&url=" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>Web Development & Optimization</h2>
+                    <span class="project-number">03 / PROJECT</span>
+                </div>
+                <p class="project-desc">
+                    Functional web production structured using Phoenix Code. Code structure and logic were optimized using ChatGPT and Gemini.
+                </p>
+                <ul class="tech-list">
+                    <li>Phoenix Code</li>
+                    <li>GitHub</li>
+                    <li>HTML/CSS</li>
+                </ul>
+                <div class="preview-box">
+                    <pre><code>
+/* --- Web Production Style & Initialization --- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+.interactive-window {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 6px;
+}
+
+.render-node {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #222;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+/* --- Responsive & Conversion Nodes --- */
+
+.cta-button {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+    background: #aaaaaa;
+}
+
+/* --- End of Snippet --- */
+                    </code></pre>
+                </div>
+            </div>
         </div>
 
-        <div id="web" class="content-card project-content active">
-            <h3>Web Production & UI/UX Design</h3>
-            <p>Practical application of building, versioning, and prototyping responsive interfaces for the web and applications.</p>
-            <ul class="tech-stack">
-                <li>Phoenix Code</li>
-                <li>GitHub</li>
-                <li>Figma</li>
-                <li>HTML/CSS</li>
-            </ul>
-            <ul class="project-details">
-                <li><strong>Web Development Projects:</strong> Built functional sites via Phoenix Code, managing design and structure efficiently. Used GitHub to deploy and track versions for an interactive science communication project.</li>
-                <li><strong>UI/UX Design:</strong> Prototyped interactive user application wireframes and interfaces in Figma with a strong emphasis on user flow.</li>
-            </ul>
-        </div>
-
-        <div id="editorial" class="content-card project-content">
-            <h3>Editorial & Magazine Design</h3>
-            <p>End-to-end design and production of a 28-page print and digital magazine.</p>
-            <ul class="tech-stack">
-                <li>Adobe InDesign</li>
-                <li>Adobe Photoshop</li>
-                <li>Adobe Illustrator</li>
-                <li>Canva</li>
-            </ul>
-            <ul class="project-details">
-                <li><strong>Design and Composition:</strong> Managed grid systems, type hierarchies, and color profiles throughout the 28-page spread.</li>
-                <li><strong>Asset Manipulation:</strong> Processed and color-corrected photographic assets within Photoshop and created vector illustrations for specific articles.</li>
-            </ul>
-        </div>
-
-        <div id="ai" class="content-card project-content">
-            <h3>AI-Assisted Content Production</h3>
-            <p>Integrating large language models into daily asset creation, layout ideas, and code structuring.</p>
-            <ul class="tech-stack">
-                <li>Claude</li>
-                <li>ChatGPT</li>
-                <li>Gemini</li>
-                <li>Microsoft 365 Suite</li>
-            </ul>
-            <ul class="project-details">
-                <li><strong>Workflow Acceleration:</strong> Used LLMs to brainstorm project copy variants and streamline design elements for both web and print layouts.</li>
-                <li><strong>CSS/HTML Code Optimization:</strong> Prompted AI assistants to review, clean, and optimize CSS code structures to ensure mobile responsiveness and fast page performance.</li>
-            </ul>
-        </div>
-
-        <div id="multimedia" class="content-card project-content">
-            <h3>Multimedia Production</h3>
-            <p>Creating dynamic and short-form assets for different media channels.</p>
-            <ul class="tech-stack">
-                <li>Adobe Premiere Pro</li>
-                <li>Adobe After Effects</li>
-                <li>Adobe Animate</li>
-            </ul>
-            <ul class="project-details">
-                <li><strong>Video Editing:</strong> Cut and structured digital media clips, matching pace and timing for engaging educational projects.</li>
-                <li><strong>Motion Design:</strong> Developed short animations and dynamic vector motion graphics to enhance visual communication.</li>
-            </ul>
-        </div>
-
-        <div class="footer-note">
-            Prepared for Connect 4 Marketing — 2026
-        </div>
+        <footer>
+            Prepared for Connect 4 Marketing &bull; 2026
+        </footer>
     </div>
-
-    <script>
-        function showProject(projectId) {
-            // Hide all contents
-            var contents = document.querySelectorAll('.project-content');
-            contents.forEach(function(content) {
-                content.classList.remove('active');
-            });
-
-            // Remove active status from all buttons
-            var buttons = document.querySelectorAll('.btn-project');
-            buttons.forEach(function(button) {
-                button.classList.remove('active');
-            });
-
-            // Show selected content
-            document.getElementById(projectId).classList.add('active');
-
-            // Set active status to clicked button
-            event.currentTarget.classList.add('active');
-        }
-    </script>
 </body>
 </html>
