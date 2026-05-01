@@ -1,0 +1,208 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --secondary-color: #666666;
+    --border-color: #e5e5e5;
+    --card-bg: #f9f9f9;
+    --accent-color: #000000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 35px;
+    margin-bottom: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.header-info h1 {
+    margin: 0 0 8px 0;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.header-info p {
+    margin: 0;
+    color: var(--secondary-color);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.contact-info {
+    text-align: right;
+    font-size: 13px;
+    color: var(--secondary-color);
+}
+
+.contact-info a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.project-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 35px;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: var(--text-color);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 15px;
+}
+
+.project-card h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+.project-number {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-family: monospace;
+}
+
+.project-desc {
+    font-size: 14px;
+    color: var(--secondary-color);
+    margin-bottom: 22px;
+    max-width: 90%;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.tech-list li {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #333333;
+}
+
+.preview-box {
+    background: #090909;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    color: #ffffff;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    height: 280px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.preview-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.preview-box::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    border-radius: 4px;
+}
+
+.preview-box pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.figma-frame {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fafafa;
+}
+
+.figma-embed {
+    width: 100%;
+    height: 320px;
+    border: none;
+}
+
+.magazine-preview {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 40px 20px;
+    text-align: center;
+    background: #fafafa;
+    font-size: 13px;
+}
+
+.magazine-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ffffff;
+    background: #000000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    transition: background 0.2s ease;
+}
+
+.magazine-link:hover {
+    background: #333333;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--secondary-color);
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
