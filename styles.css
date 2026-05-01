@@ -3,8 +3,7 @@
     --text-color: #111111;
     --secondary-color: #666666;
     --border-color: #e5e5e5;
-    --card-bg: #f9f9f9;
-    --accent-color: #000000;
+    --card-bg: #fafafa;
 }
 
 * {
@@ -38,7 +37,7 @@ header {
 
 .header-info h1 {
     margin: 0 0 8px 0;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: 800;
     letter-spacing: -0.5px;
 }
@@ -70,7 +69,7 @@ header {
 .projects-grid {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 45px;
 }
 
 .project-card {
@@ -78,7 +77,7 @@ header {
     border: 1px solid var(--border-color);
     border-radius: 6px;
     padding: 35px;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
 }
 
 .project-card:hover {
@@ -96,6 +95,20 @@ header {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: -0.2px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.live-link {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.live-link:hover {
+    text-decoration: underline;
 }
 
 .project-number {
@@ -130,6 +143,21 @@ header {
     color: #333333;
 }
 
+.media-container {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fafafa;
+    height: 380px;
+    width: 100%;
+}
+
+.media-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 .preview-box {
     background: #090909;
     border-radius: 4px;
@@ -156,46 +184,6 @@ header {
 .preview-box pre {
     white-space: pre-wrap;
     word-break: break-all;
-}
-
-.figma-frame {
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    overflow: hidden;
-    background: #fafafa;
-}
-
-.figma-embed {
-    width: 100%;
-    height: 320px;
-    border: none;
-}
-
-.magazine-preview {
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    padding: 40px 20px;
-    text-align: center;
-    background: #fafafa;
-    font-size: 13px;
-}
-
-.magazine-link {
-    display: inline-block;
-    margin-top: 15px;
-    color: #ffffff;
-    background: #000000;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: 600;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-    transition: background 0.2s ease;
-}
-
-.magazine-link:hover {
-    background: #333333;
 }
 
 footer {
